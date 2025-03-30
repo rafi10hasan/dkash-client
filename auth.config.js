@@ -17,7 +17,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
         });
 
         const user = await res.json();
-        console.log("user", user);
+       
         if (!res.ok) throw new Error(user.message);
 
         return {
@@ -63,7 +63,6 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
         role:token.role
       };
 
-      console.log("session", session);
       return session;
     },
   },
