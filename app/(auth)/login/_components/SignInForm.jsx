@@ -59,7 +59,7 @@ export default function SignInForm() {
                 <FormControl>
                   <Input type="text" placeholder="Enter your phone number" {...field} />
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="text-gray-100"/>
               </FormItem>
             )}
           />
@@ -92,7 +92,7 @@ export default function SignInForm() {
 
                   {/* <Input type="password" placeholder="Enter your password" {...field} /> */}
                 </FormControl>
-                <FormMessage />
+                <FormMessage className="text-gray-100"/>
               </FormItem>
             )}
           />
