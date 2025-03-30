@@ -63,7 +63,7 @@ export default function CashRequest() {
     <>
       <section className="bg-gray-50 dark:bg-gray-900 mt-6 p-3 sm:p-5">
         <h1 className="text-center font-semibold mb-4 text-base md:text-xl lg:text-2xl">
-          All withdraw Request accounts
+          All cash Request accounts
         </h1>
 
         <div className="mx-auto max-w-screen-xl px-4">

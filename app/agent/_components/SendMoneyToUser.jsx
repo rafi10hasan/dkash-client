@@ -18,7 +18,7 @@ import { z } from "zod";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/useAuth";
-import { RocketIcon } from "lucide-react";
+import { FaRegPaperPlane } from "react-icons/fa";
 
  
 export default function SendMoneyToUser ({userId,agentNumber}) {
@@ -107,7 +107,7 @@ export default function SendMoneyToUser ({userId,agentNumber}) {
   return (
     <>
       <div>
-          <Button onClick={()=>setDialogOpen(true)}>send money to user<RocketIcon/></Button>
+          <Button className="bg-violet-600" onClick={()=>setDialogOpen(true)}>send money to user<FaRegPaperPlane /></Button>
       </div>
        {/* pin number verify */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>

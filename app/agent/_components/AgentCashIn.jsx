@@ -1,26 +1,13 @@
 "use client";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { HandCoins, Rocket } from "lucide-react";
+import { HandCoins, Plus} from "lucide-react";
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/useAuth";
-
+import { GiCash } from "react-icons/gi";
 
 export default function AgentCashIn() {
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -54,9 +41,9 @@ export default function AgentCashIn() {
   return (
     <>
       <div>
-        <Button onClick={() => setDialogOpen(true)}>
+        <Button className="bg-teal-600" onClick={() => setDialogOpen(true)}>
            cash in
-          <HandCoins />
+          <GiCash/>
         </Button>
       </div>
 

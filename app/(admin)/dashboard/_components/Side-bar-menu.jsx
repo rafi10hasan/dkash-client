@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function SideBarMenu ({items}) {
   return (
     <div className="space-y-3">
-    <h1 className="text-sm text-gray-700">pay-hero</h1>
+    <h1 className="text-sm text-gray-700">Dkash</h1>
 
     {items.map((item) =>
       !item.items ? (

@@ -1,5 +1,5 @@
 import { auth } from "@/auth.config";
-import Tabular from "@/components/_components/Table/Tabular";
+import Tabular from "@/components/_components/Table/TransactionTable";
 
 export default async function page({ params }) {
   const { id } = await params;
@@ -37,7 +37,7 @@ export default async function page({ params }) {
           Balance: <span className="font-normal text-yellow-500">{balance}&#2547;</span>
         </h1>
       </div>
-      <Tabular transactions={transactions}/>
+      <Tabular transactions={transactions} />
     </>
   );
 }

@@ -16,7 +16,7 @@ import { Rocket } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { useSession } from "next-auth/react";
+import { FaRegPaperPlane } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/useAuth";
@@ -33,11 +33,6 @@ export default function SendMoney({senderNumber}) {
         router.push('/login')
        }
   },[session])
-//   useEffect(() => {
-//     if (status === "unauthenticated") {
-//       router.push("/login");
-//     }
-//   }, [status, router]);
   
   const sendMoneySchema = z
   .object({
@@ -83,9 +78,9 @@ export default function SendMoney({senderNumber}) {
   return (
     <>
       <div>
-        <Button onClick={() => setDialogOpen(true)}>
+        <Button className="bg-teal-600" onClick={() => setDialogOpen(true)}>
           send money
-          <Rocket />
+          <FaRegPaperPlane/>
         </Button>
       </div>
 

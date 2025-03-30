@@ -12,11 +12,10 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { HandCoins } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
+import { PiHandWithdrawBold } from "react-icons/pi";
 import { useAuth } from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -77,9 +76,9 @@ export default function WithdrawRequest() {
   return (
     <>
       <div>
-        <Button onClick={() => setDialogOpen(true)}>
+        <Button className="bg-purple-800" onClick={() => setDialogOpen(true)}>
             withdraw request
-          <HandCoins />
+          <PiHandWithdrawBold/>
         </Button>
       </div>
 

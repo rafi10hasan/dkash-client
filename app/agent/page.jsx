@@ -1,17 +1,17 @@
-import Tabular from "@/components/_components/Table/Tabular";
-import AgentHeader from "./_components/AgentHeader";
-import { SessionProvider } from "next-auth/react";
-import { fetchedData } from "@/lib/fetchedData";
 import { auth } from "@/auth.config";
+import { fetchedData } from "@/lib/fetchedData";
+import { SessionProvider } from "next-auth/react";
 import { redirect } from "next/navigation";
+import AgentHeader from "./_components/AgentHeader";
+import TransactionTable from "@/components/_components/Table/TransactionTable";
 
 export default async function AgentPage() {
-    const session = await auth();
-    if(!session){
-        redirect('/login')
-    }
-    const data = await fetchedData(session.user.id,session.accessToken);
-    console.log(data)
+  const session = await auth();
+  if (!session) {
+    redirect("/login");
+  }
+  const data = await fetchedData(session.user.id, session.accessToken);
+
   if (!data.isVerified) {
     return (
       <h1 className="bg-pink-100 text-center py-2 rounded-md">
@@ -21,9 +21,9 @@ export default async function AgentPage() {
   }
   return (
     <>
-     <SessionProvider>
+      <SessionProvider>
         <AgentHeader data={data} />
-        <Tabular transactions={data.transactions}/>
+        <TransactionTable transactions={data.transactions} />
       </SessionProvider>
     </>
   );

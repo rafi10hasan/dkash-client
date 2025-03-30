@@ -17,7 +17,7 @@ import { Rocket } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { useSession } from "next-auth/react";
+import { IoCashOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { useAuth } from "@/hooks/useAuth";
@@ -62,7 +62,6 @@ export default function CashOut({senderNumber}) {
   const { errors } = form.formState;
 
   const handleCashOut = async (formData) => {
-    console.log(session.accessToken)
     const updateFormData = {...formData,senderPhone:senderNumber}
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/transaction/user-cash-out`, {
         method: "POST",
@@ -83,9 +82,9 @@ export default function CashOut({senderNumber}) {
   return (
     <>
       <div>
-        <Button onClick={() => setDialogOpen(true)}>
+        <Button className="bg-purple-600" onClick={() => setDialogOpen(true)}>
            cash out
-          <Rocket />
+           <IoCashOutline/>
         </Button>
       </div>
 

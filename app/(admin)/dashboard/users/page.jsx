@@ -4,15 +4,15 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 export default function UsersPage() {
   const [accounts, setAccounts] = useState([] || {});
   const session = useAuth();
-  console.log(session);
+  const router = useRouter()
   const fetchAccounts = async () => {
-    console.log(session.accessToken);
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/accounts`, {
       method: "GET",
       headers: {
@@ -51,7 +51,8 @@ export default function UsersPage() {
   
         const data = await response.json();
         toast(data.message)
-        fetchAccounts();
+        router.refresh()
+        fetchAccounts()
       } catch (error) {
         throw new Error(error)
       }

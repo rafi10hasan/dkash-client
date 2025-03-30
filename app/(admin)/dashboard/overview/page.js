@@ -64,7 +64,7 @@ const Overview = () => {
               <CardTitle className="text-xl font-semibold text-gray-700">Admin Income</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-2xl font-bold text-red-600">${overview.adminIncome}</p>
+              <p className="text-2xl font-bold text-red-600">{overview.adminIncome}</p>
             </CardContent>
           </Card>
         </div>

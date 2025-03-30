@@ -55,7 +55,7 @@ export default function SignInForm() {
             name="mobile_number"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>phone</FormLabel>
+                <FormLabel className="text-white">phone</FormLabel>
                 <FormControl>
                   <Input type="text" placeholder="Enter your phone number" {...field} />
                 </FormControl>
@@ -69,13 +69,13 @@ export default function SignInForm() {
             name="pin_number"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>pin number</FormLabel>
+                <FormLabel className="text-white">pin number</FormLabel>
                 <FormControl>
 
                 <div className="flex relative ">
                     <Input
                       type={passwordVisible ? "text" : "password"}
-                      placeholder="Enter your pin number"
+                      placeholder="Enter your 5 digit pin number"
                       {...field}
                     />
                     <Button
@@ -103,7 +103,7 @@ export default function SignInForm() {
             </Button>
           </div>
         </form>
-        <div className="mt-4 text-center text-sm">
+        <div className="mt-4 text-center text-sm text-white">
           do you have an account?{" "}
           <Link href="/register" className="underline text-deep-cyan font-semibold">
             Sign up

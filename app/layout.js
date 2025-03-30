@@ -21,7 +21,7 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="w-[1240px] mx-auto">
+        <div className="">
         {children}
         </div>
        
